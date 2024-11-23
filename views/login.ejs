@@ -1,0 +1,32 @@
+<%- include("./partials/firstheader.ejs") %>
+
+<div class="wrapper">
+  <img class="mb-4" src="/images/user.svg" alt="user" width="70" height="70"  style="background-color: rgb(19, 20, 20); border-radius: 50%;">
+            
+           
+  <h1 class="h3 mb-3 fw-normal">  </h1>
+
+  <h1 class="h3 mb-3 fw-normal">Please login here.</h1>
+    <div class="content rounded ">
+        <form method="post" action="/login" class="form-style">
+           
+            <div >
+              <label class="label" for="floatingInput">Email address:</label>
+              <input class="input" type="email" value=" " id="floatingInput"  name="username">
+              
+            </div>
+            <div class="form-floating ">
+              <label class="label"  for="floatingPassword">Password:</label>
+              <input class="input" type="password"  id="floatingPassword" value=" "  name="password" placeholder="1234">
+              
+            </div>
+        
+            <button class="btn " type="submit">login</button>
+            
+
+          </form>
+          
+    </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>

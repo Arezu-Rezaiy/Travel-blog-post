@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/script.js"></script>
+
+  </head>
+
+  <body>
+    <%- include("partials/header.ejs") %>
+
+    <h1 class="post-title">LATEST POST</h1>
+
+    
+      <% posts.forEach(post => { %>
+        <div class="post">
+      <div class="container">
+        <h2><%= post.title %></h2>
+        <p class="desc-post"><%= post.description %></p>
+        <img
+          src="<%= post.imgurl %>"
+          alt="<%= post.title %>"
+          style="max-width: 400px"
+          class="img-center"
+        />
+        <form
+          action="/delete/<%= post.id %>"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="blog-input">
+            <button type="submit" id="deleteBtn" class="button2">Delete Post</button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+      <% }) %>
+    
+
+    
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Confirm Deletion</h2>
+        <p>Are you sure you want to delete this post?</p>
+        <div class="modal-buttons">
+          <button id="confirmBtn" class="confirm">Confirm</button>
+          <button id="cancelBtn" class="cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
+    
+  </body>
+</html>

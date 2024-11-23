@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <%- include("./partials/firstheader.ejs") %>
+
+<div class="wrapper">
+    <div class="content rounded">
+
+            <img class="mb-4" src="/images/user.svg" alt="user" width="70" height="70" style="background-color: rgb(19, 20, 20); border-radius: 50%;">
+            <h1 class="h3 mb-3 fw-normal">Please sign up here.</h1>
+
+        <form method="post" action="/register" class="form-style ">
+            
+            <div >
+              <label class="label" for="floatingInput">Full Name:</label>
+              <input class="input" type="text"  value="" id="floatingInput" placeholder="Name like 'Saubhagya Patel'" name="name">
+              
+            </div>
+
+            <div>
+              <label class="label" for="floatingInput">Email address:</label>
+              <input class="input" type="email" value=" " class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+              
+            </div>
+
+            <div class="form-floating mb-3">
+              <label class="label" for="floatingPassword">Password:</label>
+              <input class="input" type="password" value=" " class="form-control" id="floatingPassword" placeholder="Password" name="password">
+             
+            </div>
+              <button class="btn"  type="submit">Sign up</button>
+            
+
+          </form>
+    </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>
+</body>
+</html>

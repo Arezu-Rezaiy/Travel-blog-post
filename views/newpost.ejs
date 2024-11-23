@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Post</title>
+ 
+  </head>
+  <body>
+    
+    <%- include("partials/header.ejs") %>
+
+    <h1 class="post-title">Create New Post</h1>
+    <form action="/newpost" method="post" enctype="multipart/form-data">
+      <div class="container">
+      <label for="title">Title:</label><br />
+      <input type="text" id="title" name="title" class="Feedback-input" required /><br />
+
+      <label for="description">Body:</label><br />
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        cols="50"
+        class="Feedback-input"
+        required
+      ></textarea
+      ><br />
+
+      <label for="imageUrl">Upload Image:</label><br />
+
+      <input type="file" id="imageUrl" name="imageUrl" accept="image/jpeg, image/png, image/jpg" required /><br />
+      <img src="images/placeholder.png" alt="pic-image" id="profile-pic" class="img-center" name="image"><br>
+      <button type="submit">Create</button>
+    </div>
+    </form>
+<%- include("partials/footer.ejs") %>
+
+  
+   <script>
+    let profilePic =document.getElementById("profile-pic");
+       let inputFile =document.getElementById("imageUrl");
+       
+       inputFile.onchange =function(){
+           profilePic.src = URL.createObjectURL(inputFile.files[0])
+       };
+       
+
+</script>
+
+  </body>
+</html>
